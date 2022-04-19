@@ -1,12 +1,17 @@
 
+let numUno= parseInt(prompt("Ingrese un número"));
 
-let nombre= prompt("Ingrese su nombre");
-let apellido= prompt("Ingrese su apellido");
+for (let i=1;i<=100;i++){
+    let resultado= numUno * i;
+alert(numUno +" X "+ i + " = " + resultado);
 
-if ((nombre ==="") && (apellido==="")){
-    alert("No ha ingresado ningún caracter")
-} else ((nombre !==" ") && (apellido !==" "));{
-    alert("Nombre: "+nombre +"\nApellido: "+apellido);
-};
+if(resultado<=100) {
+    continue;
+}
+else {
+    alert("Su multiplicación ha superado el límite establecido");
+    break;
+}
 
+}
 
