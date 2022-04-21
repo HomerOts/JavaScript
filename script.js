@@ -12,8 +12,6 @@ function cotizar(distancia, km) {
     } else if ((regreso === "no") || (regreso === "No") || (regreso === "NO")) {
         alert("El valor de su viaje es de $" + (resultado))
     } 
-    do{
-        cotizar
-    }  while (distancia !=" ")
+   
 
 
