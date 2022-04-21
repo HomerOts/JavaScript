@@ -1,17 +1,24 @@
 
-let numUno= parseInt(prompt("Ingrese un número"));
+const vuelta = parseFloat(1.20)
+const km = parseInt(40)
+let distancia = parseFloat(prompt("Ingrese el kilometraje de su viaje"))
 
-for (let i=1;i<=100;i++){
-    let resultado= numUno * i;
-alert(numUno +" X "+ i + " = " + resultado);
 
-if(resultado<=100) {
-    continue;
-}
-else {
-    alert("Su multiplicación ha superado el límite establecido");
-    break;
+let regreso = prompt("Dicho viaje requiere vuelta?")
+
+function cotizar (distancia,km) {
+    return distancia * km
 }
 
+let resultado = parseFloat (distancia * km)
+
+if ((regreso === "si") ||(regreso === "Si") || (regreso === "SI")) {
+    alert("El valor de su viaje es de $"+(resultado * vuelta))
+} 
+else if ((regreso ==="no") || (regreso ==="No") || (regreso ==="NO")) {
+    alert("El valor de su viaje es de $"+(resultado))
 }
+
+
+
 
