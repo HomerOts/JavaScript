@@ -6,36 +6,46 @@ let regreso = prompt("Dicho viaje requiere vuelta? Responda Si o No")
 let resultado = parseFloat(distancia * km)
 
 
-
+do{
     console.log(ingreseNombre)
+    console.log(distancia)
+    console.log(regreso)
     if ((regreso === "si") || (regreso === "Si") || (regreso === "SI")) {
         alert("El valor de su viaje es de $" + (resultado * vuelta))
         console.log("El valor de su viaje es de $"+resultado * vuelta)
     } else if ((regreso === "no") || (regreso === "No") || (regreso === "NO")) {
         alert("El valor de su viaje es de $" + (resultado))
-        console.log(resultado)
-    } else if (resultado===isNaN){
-        alert("Ingrese un kilometraje válido")
-    } else if (resultado ===parseFloat){
-        alert(distancia)
+    } else if (resultado === parseFloat){
+        console.log("Consulte por disponibilidad de vehículos")
     }
+   break;
+} while(ingreseNombre!= " ")
+console.log(ingreseNombre+", muchas gracias por utilizar Envío Veloz")
 
-    const cotizar=(distancia) => distancia * km
+ 
 
 
-    class Viajes{
+    class Viaje {
         constructor (nombre, kilometraje, vuelta){
             this.nombre= nombre
             this.kilometraje = kilometraje
-            this.vuelta = vuelta
+            this.vuelta = vuelta   
         }
     }
 
-const viaje1= new Viajes ("Gastón",25, "si")
-const viaje2= new Viajes ("Carlos",32, "si")
-const viaje3= new Viajes ("Gonzalo",8, "no")
-const viaje4= new Viajes ("Irene",18, "no")
+const viaje1= new Viaje ("Gastón",25, "si")
+const viaje2= new Viaje ("Carlos",32, "si")
+const viaje3= new Viaje ("Gonzalo",8, "no")
+const viaje4= new Viaje ("Irene",18, "no")
 
 let viajes =[viaje1,viaje2,viaje3,viaje4]
+
+
 console.log("Consulte por otros viajes")
-console.log([viajes])
+
+for(let viaje of viajes) {
+   for(let propiedad in viajes) 
+   console.log(viajes[propiedad])    
+   break;
+}
+    
