@@ -1,11 +1,10 @@
 const vuelta = parseFloat(1.20)
 const km = parseInt(40)
-let ingreseNombre = prompt("Ingrese su nombre")
-let distancia = parseFloat(prompt("Ingrese el kilometraje de su viaje"))
-let regreso = prompt("Dicho viaje requiere vuelta? Responda Si o No")
-let resultado = parseFloat(distancia * km)
+let ingreseNombre = document.getElementById("nombre")
+let distancia = document.getElementById("kilometraje")
+let regreso = document.getElementById("vuelta")
 
-
+/* Comento primeras entregas
 do{
     console.log(ingreseNombre)
     console.log(distancia)
@@ -21,10 +20,10 @@ do{
    break;
 } while(ingreseNombre!= " ")
 console.log(ingreseNombre+", muchas gracias por utilizar Envío Veloz")
-
+*/
  
 
-
+//Constructor + array
     class Viaje {
         constructor (nombre, kilometraje, vuelta){
             this.nombre= nombre
@@ -39,7 +38,7 @@ const viaje3= new Viaje ("Gonzalo",8, "no")
 const viaje4= new Viaje ("Irene",18, "no")
 
 let viajes =[viaje1,viaje2,viaje3,viaje4]
-
+//Fin constructor + array
 
 console.log("Consulte por otros viajes")
 
@@ -49,3 +48,26 @@ for(let viaje of viajes) {
    break;
 }
     
+let cotizar = document.getElementById("cotizar")
+
+
+ingreseNombre.addEventListener('input',(event)=> {
+    console.log("Bienvenido/a "+ ingreseNombre.value)
+})
+
+let ingreseKm = document.getElementById("kilometraje")
+
+ingreseKm.addEventListener('input',()=> {
+
+        console.log("Usted desea cotizar un viaje de " + ingreseKm.value + "kilometros" )
+})
+
+cotizar.addEventListener('click', () => {
+    let resultado = parseFloat(distancia.value * km)
+    
+    console.log("El valor de su viaje es de $"+resultado)
+    
+})
+
+
+

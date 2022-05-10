@@ -45,3 +45,19 @@ body{
 .radio input{
     margin-left: 30px;
 }
+
+.form div,p{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer{
+    display: flex;
+}
+
+.img-final{
+    padding-top: 40px;
+    height: 80px;
+    width: 100px;
+    padding-left: 20px;
+}
