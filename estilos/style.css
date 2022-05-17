@@ -61,3 +61,16 @@ footer{
     width: 100px;
     padding-left: 20px;
 }
+
+.otrosViajes{
+    text-align: center;
+    margin-left: 20px;
+    flex-flow: row wrap;
+    margin-top: 30px;
+    border: solid 1px white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.otrosViajes p{
+    padding-bottom:10px;
+}
