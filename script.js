@@ -22,7 +22,7 @@ do{
 } while(ingreseNombre!= " ")
 console.log(ingreseNombre+", muchas gracias por utilizar Envío Veloz")
 */
- 
+
 
 console.log("Consulte por otros viajes")
 
@@ -30,47 +30,55 @@ console.log("Consulte por otros viajes")
 let cotizar = document.getElementById("cotizar")
 
 
-ingreseNombre.addEventListener('input',(event)=> {
-    console.log("Bienvenido/a "+ ingreseNombre.value)
+ingreseNombre.addEventListener('input', (event) => {
+    console.log("Bienvenido/a " + ingreseNombre.value)
 })
 
 let ingreseKm = document.getElementById("kilometraje")
 
-ingreseKm.addEventListener('input',()=> {
+ingreseKm.addEventListener('input', () => {
 
-        console.log("Usted desea cotizar un viaje de " + ingreseKm.value + "kilometros" )
+    console.log("Usted desea cotizar un viaje de " + ingreseKm.value + "kilometros")
 })
 
 cotizar.addEventListener('click', () => {
     let resultado = parseFloat(distancia.value * km)
-    
-    console.log("El valor de su viaje es de $"+resultado)
-    
+
+    console.log("El valor de su viaje es de $" + resultado)
+
 })
 
 
 //Local Storage
 
 
-let arrayViajeros=[{nombre:"Gastón"},{nombre:"Carlos"},{nombre:"Gonzalo"}, {nombre:"Irene"}]
+let arrayViajeros = [{
+    nombre: "Gastón"
+}, {
+    nombre: "Carlos"
+}, {
+    nombre: "Gonzalo"
+}, {
+    nombre: "Irene"
+}]
 
-let viajerosJson= JSON.stringify(arrayViajeros)
+let viajerosJson = JSON.stringify(arrayViajeros)
 console.log(viajerosJson)
 
 
 localStorage.setItem("viajeros", viajerosJson)
 
-let viajerosParseados= JSON.parse(localStorage.getItem("viajeros"))
+let viajerosParseados = JSON.parse(localStorage.getItem("viajeros"))
 console.log(viajerosParseados)
 
 
 
 class Viaje {
-    constructor (nombre, kilometraje, vuelta, id) {
+    constructor(nombre, kilometraje, vuelta, id) {
         this.nombre = nombre;
         this.kilometraje = kilometraje;
         this.vuelta = vuelta;
-        this.id= id;   
+        this.id = id;
     }
 
     mostrarNombre() {
@@ -78,10 +86,10 @@ class Viaje {
     }
 }
 
-const viaje1= new Viaje("Gastón", 25, "si", 1)
-const viaje2= new Viaje("Carlos", 32, "si", 2)
-const viaje3= new Viaje("Gonzalo", 8, "no", 3)
-const viaje4= new Viaje("Irene", 18, "no", 4)
+const viaje1 = new Viaje("Gastón", 25, "si", 1)
+const viaje2 = new Viaje("Carlos", 32, "si", 2)
+const viaje3 = new Viaje("Gonzalo", 8, "no", 3)
+const viaje4 = new Viaje("Irene", 18, "no", 4)
 
 let viajes = [viaje1, viaje2, viaje3, viaje4]
 
@@ -89,23 +97,23 @@ let divViajes = document.getElementById("viajeros")
 
 viajes.forEach(viaje => {
     divViajes.innerHTML += `
+    <div class="contenedorviajeros">
         <div class="otrosViajes" id="viaje${viaje.id}">
-            <h5> Otros Viajeros </h5>
                 <p> ${viaje.nombre} </p>
                 <p> ${viaje.kilometraje} </p>
                 <p> ${viaje.vuelta} </p>
                 <button id="boton${viaje.id}"> Revisar comentarios </button>
         </div>
+        </div>
     `
 })
 let comentarios = []
 
-viajes.forEach( viaje =>{
-  document.getElementById(`boton${viaje.id}`).addEventListener('click', () =>{
+viajes.forEach(viaje => {
+    document.getElementById(`boton${viaje.id}`).addEventListener('click', () => {
         console.log("Envío Veloz es una mensajería de confianza! Super Recomendable")
         comentarios.push(viaje)
         localStorage.setItem("otros viajeros", JSON.stringify(comentarios))
-  })
+    })
 
 })
-    

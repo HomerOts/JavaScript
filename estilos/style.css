@@ -51,8 +51,9 @@ body{
     padding-top: 10px;
 }
 
-footer{
-    display: flex;
+.footer{
+    text-align: right;
+    margin-right: 20px
 }
 
 .img-final{
@@ -65,12 +66,23 @@ footer{
 .otrosViajes{
     text-align: center;
     margin-left: 20px;
+    margin-right: 20px;
     flex-flow: row wrap;
     margin-top: 30px;
     border: solid 1px white;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 200px;
 }
 .otrosViajes p{
     padding-bottom:10px;
+}
+.contenedorviajeros{
+    display: flex;
+    flex-flow: row wrap;
+}
+#viajeros{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
