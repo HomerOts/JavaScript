@@ -42,8 +42,15 @@ ingreseKm.addEventListener('input', () => {
 })
 
 cotizar.addEventListener('click', () => {
-    let resultado = parseFloat(distancia.value * km)
 
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Gracias por confiar en Envío veloz',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    let resultado = parseFloat(distancia.value * km)
     console.log("El valor de su viaje es de $" + resultado)
 
 })
@@ -104,7 +111,7 @@ viajes.forEach(viaje => {
                 <p> ${viaje.vuelta} </p>
                 <button id="boton${viaje.id}"> Revisar comentarios </button>
         </div>
-        </div>
+    </div>
     `
 })
 let comentarios = []
