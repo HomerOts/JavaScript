@@ -100,27 +100,28 @@ const viaje4 = new Viaje("Irene", 18, "no", 4)
 
 let viajes = [viaje1, viaje2, viaje3, viaje4]
 
-let divViajes = document.getElementById("viajeros")
 
-viajes.forEach(viaje => {
-    divViajes.innerHTML += `
+
+
+let comentarios = []
+
+
+let divViajes = document.getElementById("viajeros")
+fetch('viajeros.json')
+.then(response => response.json ())
+.then(viajeros => {
+        viajeros.forEach((viajero)=> {
+            let {id,nombre,kilometraje,vuelta} = viajero
+            divViajes.innerHTML += `
     <div class="contenedorviajeros">
-        <div class="otrosViajes" id="viaje${viaje.id}">
-                <p> ${viaje.nombre} </p>
-                <p> ${viaje.kilometraje} </p>
-                <p> ${viaje.vuelta} </p>
-                <button id="boton${viaje.id}"> Revisar comentarios </button>
+        <div class="otrosViajes" id="viaje${id}">
+                <p> Nombre:${nombre} </p>
+                <p> Kilometraje${kilometraje} </p>
+                <p> ¿Dicho viaje requirió vuelta?:${vuelta} </p>
+                <button id="boton${id}"> Revisar comentarios </button>
         </div>
     </div>
     `
-})
-let comentarios = []
-
-viajes.forEach(viaje => {
-    document.getElementById(`boton${viaje.id}`).addEventListener('click', () => {
-        console.log("Envío Veloz es una mensajería de confianza! Super Recomendable")
-        comentarios.push(viaje)
-        localStorage.setItem("otros viajeros", JSON.stringify(comentarios))
-    })
+        })
 
 })

@@ -1,0 +1,24 @@
+[
+
+{ "nombre": "Gastón",
+    "kilometraje": 25,
+    "vuelta": "si",
+    "id": 1
+},
+{ "nombre": "Carlos",
+    "kilometraje": 32,
+    "vuelta": "si",
+    "id": 2
+},
+{ "nombre": "Gonzalo",
+    "kilometraje": 8,
+    "vuelta": "no",
+    "id": 3
+},
+{ "nombre": "Irene",
+    "kilometraje": 18,
+    "vuelta": "no",
+    "id": 4
+}
+
+]
